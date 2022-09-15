@@ -34,7 +34,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        $cards = Card::where('status','available')->get()->take(3);
+        $cards = Card::where('status','available')->inRandomOrder()->get()->take(3);
 
         $data = [
             'titlt' => "Agents",
